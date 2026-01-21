@@ -1,0 +1,18 @@
+.guides{
+    margin: 80px auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.guide img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    border: 5px solid #B4ACE2;
+}
+
+.guide{
+    flex-basis: 31%;
+}

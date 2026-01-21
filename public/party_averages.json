@@ -1,0 +1,123 @@
+{
+    "party_statistics": {
+        "Labour Party": {
+            "mp_count": 403,
+            "average_attendance_rate": 82.29354838709678,
+            "max_attendance_rate": 97.89,
+            "min_attendance_rate": 1.05,
+            "average_rebellion_rate": 0.6806699751861042,
+            "max_rebellion_rate": 8.33,
+            "min_rebellion_rate": 0.0
+        },
+        "Traditional Unionist Voice": {
+            "mp_count": 1,
+            "average_attendance_rate": 71.58,
+            "max_attendance_rate": 71.58,
+            "min_attendance_rate": 71.58,
+            "average_rebellion_rate": 0.0,
+            "max_rebellion_rate": 0.0,
+            "min_rebellion_rate": 0.0
+        },
+        "Liberal Democrat Party": {
+            "mp_count": 72,
+            "average_attendance_rate": 57.42652777777778,
+            "max_attendance_rate": 65.26,
+            "min_attendance_rate": 41.05,
+            "average_rebellion_rate": 0.47208333333333335,
+            "max_rebellion_rate": 4.44,
+            "min_rebellion_rate": 0.0
+        },
+        "Reform": {
+            "mp_count": 5,
+            "average_attendance_rate": 54.105999999999995,
+            "max_attendance_rate": 66.32,
+            "min_attendance_rate": 35.79,
+            "average_rebellion_rate": 1.264,
+            "max_rebellion_rate": 2.94,
+            "min_rebellion_rate": 0.0
+        },
+        "Conservative Party": {
+            "mp_count": 121,
+            "average_attendance_rate": 66.4109917355372,
+            "max_attendance_rate": 81.05,
+            "min_attendance_rate": 1.05,
+            "average_rebellion_rate": 1.0449586776859503,
+            "max_rebellion_rate": 25.0,
+            "min_rebellion_rate": 0.0
+        },
+        "Green Party": {
+            "mp_count": 4,
+            "average_attendance_rate": 80.7875,
+            "max_attendance_rate": 83.16,
+            "min_attendance_rate": 77.89,
+            "average_rebellion_rate": 0.0,
+            "max_rebellion_rate": 0.0,
+            "min_rebellion_rate": 0.0
+        },
+        "Scottish National Party": {
+            "mp_count": 9,
+            "average_attendance_rate": 40.70333333333333,
+            "max_attendance_rate": 44.21,
+            "min_attendance_rate": 31.58,
+            "average_rebellion_rate": 0.5711111111111111,
+            "max_rebellion_rate": 2.7,
+            "min_rebellion_rate": 0.0
+        },
+        "Democratic Unionist Party": {
+            "mp_count": 5,
+            "average_attendance_rate": 64.842,
+            "max_attendance_rate": 88.42,
+            "min_attendance_rate": 54.74,
+            "average_rebellion_rate": 0.318,
+            "max_rebellion_rate": 1.59,
+            "min_rebellion_rate": 0.0
+        },
+        "Plaid Cymru": {
+            "mp_count": 4,
+            "average_attendance_rate": 58.685,
+            "max_attendance_rate": 61.05,
+            "min_attendance_rate": 55.79,
+            "average_rebellion_rate": 0.895,
+            "max_rebellion_rate": 1.79,
+            "min_rebellion_rate": 0.0
+        },
+        "Social Democratic and Labour Party": {
+            "mp_count": 2,
+            "average_attendance_rate": 42.105000000000004,
+            "max_attendance_rate": 48.42,
+            "min_attendance_rate": 35.79,
+            "average_rebellion_rate": 0.0,
+            "max_rebellion_rate": 0.0,
+            "min_rebellion_rate": 0.0
+        },
+        "Alliance Party": {
+            "mp_count": 1,
+            "average_attendance_rate": 23.16,
+            "max_attendance_rate": 23.16,
+            "min_attendance_rate": 23.16,
+            "average_rebellion_rate": 0.0,
+            "max_rebellion_rate": 0.0,
+            "min_rebellion_rate": 0.0
+        },
+        "Ulster Unionist Party": {
+            "mp_count": 1,
+            "average_attendance_rate": 83.16,
+            "max_attendance_rate": 83.16,
+            "min_attendance_rate": 83.16,
+            "average_rebellion_rate": 0.0,
+            "max_rebellion_rate": 0.0,
+            "min_rebellion_rate": 0.0
+        },
+        "Sinn Fein": {
+            "mp_count": 7,
+            "average_attendance_rate": 0,
+            "max_attendance_rate": 0,
+            "min_attendance_rate": 0,
+            "average_rebellion_rate": 0,
+            "max_rebellion_rate": 0,
+            "min_rebellion_rate": 0
+        }
+    },
+    "overall_average_attendance_rate": 75.02517515923566,
+    "overall_average_rebellion_rate": 0.7187420382165605
+}

@@ -1,0 +1,265 @@
+.search-bar{
+    background-color: white;
+    width: 80%;
+    border-radius: 46px;
+    height: 5.5rem;
+    padding: 10px 15px;
+    box-shadow: 0px 0px 8px #ddd;
+    display: flex;
+    align-items: center;
+    flex: wrap;
+    position: relative;
+}
+ 
+/* drop downs for party and topic selection */
+
+.party-dropdown,
+.topic-dropdown {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Outfit', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    margin-right: 0;          /* remove rigid spacing */
+    flex: 1 1 180px;          /* grow + wrap */
+    min-width: 140px;
+    max-width: 100%;
+    margin-right: 5px;
+}
+
+.topic-dropdown option{
+    font-family: 'Outfit', 'Arial Narrow', Arial, sans-serif;
+}
+.party-dropdown option{
+    font-family: 'Outfit', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* results formatting and box */
+
+.results-containter {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.comparison-view {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out; 
+}
+
+.manifesto-column {
+  flex: 1;
+  min-width: 0; /* Prevents flex items from overflowing */
+  transition: all 0.3s ease-in-out; 
+}
+
+.manifesto-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  overflow-y: auto;
+  max-height: 600px;
+  transition: all 0.3s ease-in-out; 
+}
+
+.man-text {
+    color:#000;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 95%;
+    border-radius: 20px;
+    padding: 15px;
+  }
+
+  .search-icon-holder {
+    order: 1;
+  }
+
+  .party-dropdown,
+  .topic-dropdown {
+    order: 2;
+    width: 100%;
+  }
+
+  .search-controls-right {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+
+.result {
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    width: 100%;
+    min-height: 100px; 
+    max-height: 600px; /* limit max height so text doesn't overflow onto the stats */
+    overflow-y: auto; /* enable scrolling */
+    transition: all 0.3s ease-in-out; /* smooth transition */
+}
+
+.result p{
+    color: black;
+    font-family: 'Outfit', 'Arial Narrow', Arial, sans-serif;
+}
+
+.result ul {
+  padding-left: 1.5rem;   /* space for bullet marker */
+  margin-left: 0;
+  list-style-position: outside;
+}
+
+.result li {
+  margin-left: 0;
+}
+
+/* search icon stuff */
+
+#search-icon{
+    color: #B4ACE2;
+    width: 20px;
+    font-size: 1.5rem;
+}
+.search-icon-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    border-radius: 25px;
+    background-color: #04001f;
+    margin-right: 10px;
+}
+
+.search-icon-holder :hover {
+    cursor: pointer;
+}
+
+/* spinner stuff */
+
+.spinner {
+    animation: spin 2s linear infinite;
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #04001f;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    min-height: 200px;
+    margin-top: 20px;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.loading h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+  font-family: 'Outfit', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* help popup and buttons */
+
+.help-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #555;
+    padding-top: 5px;
+    margin-right: 10px;
+}
+  
+.help-popup {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 100;
+}
+  
+.help-popup p {
+    color: #000;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #888;
+}
+  
+.close-button:hover {
+    color: #000;
+}
+
+#question {
+    color: #04001f;
+}
+
+.search-controls-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* manifesto specific formatting */
+
+.manifesto {
+    max-width: 70ch;
+    line-height: 1.7;
+}
+  
+.manifesto h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+  
+.manifesto ul {
+    margin-left: 1.5rem;
+}
+
+.separator {
+  text-align: center;
+  margin: 1.5rem 0;
+  font-family: monospace;
+  letter-spacing: 0.05em; 
+  color: #666;
+}

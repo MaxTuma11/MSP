@@ -1,0 +1,132 @@
+{
+    "Alliance Party": {
+        "Environment": 33.92226148409894,
+        "Economy": 20.49469964664311,
+        "Immigration": 17.6678445229682,
+        "Crime": 12.36749116607774,
+        "Education": 4.240282685512367,
+        "Transport": 4.240282685512367,
+        "Health": 3.53356890459364,
+        "Housing": 3.53356890459364
+    },
+    "Conservative Party": {
+        "Economy": 26.43478260869565,
+        "Health": 15.82608695652174,
+        "Crime": 12.521739130434783,
+        "Environment": 12.347826086956522,
+        "Transport": 11.826086956521738,
+        "Housing": 9.043478260869566,
+        "Education": 7.652173913043478,
+        "Immigration": 4.3478260869565215
+    },
+    "Democratic Unionist Party": {
+        "Economy": 28.514056224899598,
+        "Crime": 16.867469879518072,
+        "Environment": 12.851405622489958,
+        "Transport": 10.441767068273093,
+        "Housing": 10.040160642570282,
+        "Education": 8.032128514056225,
+        "Health": 7.630522088353414,
+        "Immigration": 5.622489959839357
+    },
+    "Green Party": {
+        "Environment": 37.774294670846395,
+        "Economy": 15.830721003134796,
+        "Health": 13.793103448275861,
+        "Crime": 9.090909090909092,
+        "Housing": 8.463949843260188,
+        "Transport": 7.6802507836990594,
+        "Education": 5.956112852664576,
+        "Immigration": 1.4106583072100314
+    },
+    "Labour Party": {
+        "Economy": 26.99490662139219,
+        "Health": 18.33616298811545,
+        "Environment": 17.147707979626485,
+        "Crime": 11.37521222410866,
+        "Housing": 8.998302207130731,
+        "Education": 8.149405772495756,
+        "Transport": 5.432937181663837,
+        "Immigration": 3.5653650254668934
+    },
+    "Liberal Democrat Party": {
+        "Environment": 19.366852886405958,
+        "Health": 17.690875232774676,
+        "Economy": 14.338919925512103,
+        "Crime": 12.849162011173185,
+        "Housing": 11.359404096834265,
+        "Education": 9.683426443202979,
+        "Transport": 9.124767225325884,
+        "Immigration": 5.58659217877095
+    },
+    "Plaid Cymru": {
+        "Crime": 20.85427135678392,
+        "Environment": 15.07537688442211,
+        "Education": 14.824120603015075,
+        "Transport": 13.316582914572864,
+        "Housing": 13.06532663316583,
+        "Economy": 12.311557788944723,
+        "Health": 8.291457286432161,
+        "Immigration": 2.261306532663317
+    },
+    "Reform": {
+        "Economy": 29.441624365482234,
+        "Crime": 17.258883248730964,
+        "Health": 13.19796954314721,
+        "Immigration": 11.16751269035533,
+        "Environment": 8.121827411167512,
+        "Transport": 8.121827411167512,
+        "Housing": 6.598984771573605,
+        "Education": 6.091370558375635
+    },
+    "Social Democratic and Labour Party": {
+        "Education": 23.809523809523807,
+        "Economy": 19.523809523809526,
+        "Environment": 13.333333333333334,
+        "Crime": 12.857142857142856,
+        "Health": 9.047619047619047,
+        "Transport": 8.095238095238095,
+        "Housing": 7.6190476190476195,
+        "Immigration": 5.714285714285714
+    },
+    "Sinn Fein": {
+        "Housing": 33.33333333333333,
+        "Economy": 27.77777777777778,
+        "Health": 16.666666666666664,
+        "Environment": 11.11111111111111,
+        "Crime": 5.555555555555555,
+        "Education": 5.555555555555555,
+        "Immigration": 0.0,
+        "Transport": 0.0
+    },
+    "Scottish National Party": {
+        "Economy": 26.111111111111114,
+        "Environment": 20.0,
+        "Transport": 15.555555555555555,
+        "Health": 14.444444444444443,
+        "Housing": 11.11111111111111,
+        "Crime": 6.111111111111111,
+        "Immigration": 5.0,
+        "Education": 1.6666666666666667
+    },
+    "Trational Unionist Voice": {
+        "Immigration": 30.76923076923077,
+        "Economy": 19.65811965811966,
+        "Health": 16.23931623931624,
+        "Environment": 13.675213675213676,
+        "Housing": 6.837606837606838,
+        "Crime": 5.128205128205128,
+        "Education": 5.128205128205128,
+        "Transport": 2.564102564102564
+    },
+    "Ulster Unionist Party": {
+        "Crime": 23.376623376623375,
+        "Health": 16.233766233766232,
+        "Education": 14.935064935064934,
+        "Economy": 12.987012987012985,
+        "Environment": 12.987012987012985,
+        "Housing": 11.688311688311687,
+        "Immigration": 7.142857142857142,
+        "Transport": 0.6493506493506493
+    }
+}

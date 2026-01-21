@@ -1,0 +1,17 @@
+.search-bar-container{
+    padding-top: 20vh;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+}
+
+.graph-container {
+    margin-top: 300px;
+}
+
+p{
+    color: white;
+}
