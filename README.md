@@ -1,16 +1,10 @@
-# React + Vite
+# MSP - Manifesto Summarisation Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is the source code for the website which provides users with political data and summarised manifestos.
 
 IDEAS FOR FUTURE:
-- current polls on fron page
+- current polls on front page
 - possibly news segments/titles alongside them
-- compare summarisations
 - being able to see where the summarisation has taken information in the main manifesto
 - highlighting/annotating manifestos
-- stats on the front page
+- other stats on the front page
