@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { FaSpinner, FaQuestionCircle, FaTimes } from 'react-icons/fa'; //import search icon, spinner icon, question circle icon, and X icon
 import './Searchbar.css';
 import  { manifesto_layout } from './text_format.jsx'
@@ -6,6 +6,7 @@ import { TbListSearch } from "react-icons/tb";
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { alpha, styled } from '@mui/material/styles';
+import summarisedManifestos from '../../data/summarised_manifestos.json';
 
 
 
@@ -66,7 +67,7 @@ const Searchbar = () => {
   }));
   
   //function to fetch manifesto summary
-  const fetchManifestoSummary =  () => {
+  const fetchManifestoSummary = () => {
     setLoading(true);
     setResult(null);
     setResult2(null);
@@ -74,71 +75,56 @@ const Searchbar = () => {
     setDisplayedTopic(selectedTopic);
     setDisplayedParty(selectedParty);
     if (compareMode) {
-      setDisplayedParty2(selectedPartyToo)
+      setDisplayedParty2(selectedPartyToo);
     }
 
-    //get manifesto summary from summarised_manifestos.json
-    fetch('/summarised_manifestos.json')
-      .then((response) => response.json())
-      .then((data) => {
-        //find the manifesto summary for the selected party
-        const partyObj = data.party[0];
+    try {
+      const partyData = summarisedManifestos[selectedParty];
 
-        const matchingParties = Object.keys(partyObj).find(key => key.toLowerCase() === selectedParty.toLowerCase());
+      if (!partyData) {
+        setResult('Party not found. Please select a valid party.');
+        return;
+      }
 
-        if (!matchingParties) {
-          setResult('Party not found. Please select a valid party.');
+      const topicData = partyData[selectedTopic.toLowerCase()];
+
+      if (!topicData) {
+        setResult('Topic not found. Please select a valid topic.');
+        return;
+      }
+
+      setResult(topicData);
+
+      // ----- COMPARE MODE -----
+      if (compareMode) {
+        if (selectedPartyToo === "Select Party Two") {
+          setResult2('Please select a party to display the summarised manifesto');
           return;
         }
 
-        const topicsObj = partyObj[matchingParties][0];
+        const partyData2 = summarisedManifestos[selectedPartyToo];
 
-        const matchingTopics = Object.keys(topicsObj).find(key => key.toLowerCase() === selectedTopic.toLowerCase());
-
-        if (!matchingTopics) {
-          setResult('Topic not found. Please select a valid topic.');
+        if (!partyData2) {
+          setResult2('Party not found. Please select a valid party.');
           return;
         }
 
-        setResult(topicsObj[matchingTopics]);
+        const topicData2 = partyData2[selectedTopic];
 
-        if (compareMode) { 
-          if (selectedPartyToo === "Select Party Two") {
-            setResult2('Please select a party to display the summarised manifesto')
-            return;
-          }
+        if (!topicData2) {
+          setResult2('Topic not found. Please select a valid topic.');
+          return;
+        }
+        setResult2(topicData2);
+      }
 
-          const matchingParties2 = Object.keys(partyObj).find(key => key.toLowerCase() === selectedPartyToo.toLowerCase());
-
-          if (!matchingParties2) {
-            setResult2('Party not found. Please select a valid party.');
-            return;
-          }
-
-          const topicsObj2 = partyObj[matchingParties2][0];
-          const matchingTopics2 = Object.keys(topicsObj2).find(key => key.toLowerCase() === selectedTopic.toLowerCase());
-
-          if (!matchingTopics2) {
-            setResult2('Topic not found. Please select a valid topic.');
-            return;
-          }
-
-          setResult2(topicsObj2[matchingTopics2]);
-
-        };
-
-
-      })
-      .catch((error) => {
-        console.error('Error fetching manifesto summary:', error);
-        setResult('Error fetching manifesto summary. Please try again later.');
-      })
-      .finally(() => {
-        //wait 2-4 seconds to show loading spinner
-        setTimeout(() => setLoading(false), 2000 + Math.random() * 2000);
-      });
-
-  }
+    } catch (error) {
+      console.error('Error reading manifesto data:', error);
+      setResult('Error loading manifesto data. Please try again later.');
+    } finally {
+      setTimeout(() => setLoading(false), 2000 + Math.random() * 2000);
+    }
+  };
 
   const renderManifestoHelper = (manifestoResult) => {
     return manifesto_layout(manifestoResult).map((block,i) => {
