@@ -73,6 +73,11 @@ const Datatable = () => {
             id: 14,
             name: "Public Whip Dataset",
             url: "https://www.publicwhip.org.uk/project/data.php"
+        },
+        {
+            id: 15,
+            name: "electiondatavault Dataset",
+            url: "https://electiondatavault.co.uk/tables/polling/vi-polls/"
         }
     ]
 
@@ -85,10 +90,7 @@ const Datatable = () => {
             This also provides anyone using the website with a complete and factual view of the manifesto that has not been summarised in any way.
             Additionally, data used for party statistics, such as the attendance and rebellion rates, is linked below so you can explore their data as well.
             It is also very important to note when this data was collected. Even though manifestos do not change often, party statistics do.
-            All of the data was collected on the 7th of February 2025 (07/02/2025).
-            Finally, it is important to state that the summaries and statistics are not always perfect.
-            In the case of finding errors with either the summarisations or the statistics please email: mt2023@hw.ac.uk.
-
+            The data other than manifestos is collected daily.
         </p>
         <table className="manifesto-table">
         <thead>
