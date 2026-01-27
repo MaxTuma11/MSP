@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://MaxTuma11.github.io/MSP",
+  "homepage": "https://www.manifestosummarisationproject.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
