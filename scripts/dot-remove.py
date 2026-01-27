@@ -1,5 +1,5 @@
 def fix_spaces_before_fullstops(text):
-    # Replace any space directly before a full stop
+    #replace any space directly before a full stop
     return text.replace(" .", ".")
 
 def fix_quotes(text):
