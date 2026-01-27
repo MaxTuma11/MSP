@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/navbar/navbar'
+import Navbar from '../components/navbar/Navbar'
 import Datatable from '../components/datatable/Datatable'
 
 const Data = () => {

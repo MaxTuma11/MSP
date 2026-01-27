@@ -1,6 +1,6 @@
 import React from 'react'
 import './Summaries.css'
-import Navbar from '../components/navbar/navbar'
+import Navbar from '../components/navbar/Navbar'
 import Searchbar from '../components/searchbar/Searchbar'
 
 const Summaries = () => {
