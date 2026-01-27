@@ -109,7 +109,7 @@ const Searchbar = () => {
           return;
         }
 
-        const topicData2 = partyData2[selectedTopic];
+        const topicData2 = partyData2[selectedTopic.toLowerCase()];
 
         if (!topicData2) {
           setResult2('Topic not found. Please select a valid topic.');
