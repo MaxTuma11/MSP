@@ -11,8 +11,7 @@ const Hero = () => {
         <p>
         This website is for anyone to use. 
         The project aims to create a more readable and understandable manifesto using NLP models. 
-        If you have any problems using the website, visit the "About Us" section where you can find frequently asked questions. 
-        Otherwise scroll down on this page to find a basic guide on how to use the summarisation page.
+        If you have any problems using the website, visit the "About Us" section where you can find frequently asked questions.
         </p>
         <p>
         Click the button below to visit the Manifesto Summaries!

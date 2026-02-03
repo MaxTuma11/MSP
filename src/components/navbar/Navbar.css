@@ -70,8 +70,13 @@ nav ul li a:hover {
 
 /* Mobile styles */
 @media (max-width: 768px) {
+    nav {
+        padding: 4px 10px; /* Add horizontal padding to nav itself */
+    }
+
     .hamburger {
         display: flex;
+        margin-right: 0; /* Remove extra margin */
     }
 
     nav ul {
@@ -98,6 +103,6 @@ nav ul li a:hover {
 
     .logo {
         width: 150px;
-        margin-left: 20px;
+        margin-left: 0; /* Remove the margin-left */
     }
 }
