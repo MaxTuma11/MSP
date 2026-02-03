@@ -2,13 +2,15 @@
     background-color: white;
     width: 80%;
     border-radius: 46px;
-    height: 5.5rem;
+    height: auto; /* Changed from fixed 5.5rem */
+    min-height: 5.5rem;
     padding: 10px 15px;
     box-shadow: 0px 0px 8px #ddd;
     display: flex;
     align-items: center;
-    flex: wrap;
+    flex-wrap: wrap; /* Fixed typo: was "flex: wrap" */
     position: relative;
+    gap: 10px; /* Add gap for better spacing */
 }
  
 /* drop downs for party and topic selection */
@@ -21,11 +23,9 @@
     cursor: pointer;
     font-family: 'Outfit', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
-    margin-right: 0;          /* remove rigid spacing */
-    flex: 1 1 180px;          /* grow + wrap */
+    flex: 1 1 180px;
     min-width: 140px;
     max-width: 100%;
-    margin-right: 5px;
 }
 
 .topic-dropdown option{
@@ -37,9 +37,10 @@
 
 /* results formatting and box */
 
-.results-containter {
+.results-container {
     padding: 10px;
     margin-top: 20px;
+    width: 100%;
 }
 
 .comparison-view {
@@ -52,7 +53,7 @@
 
 .manifesto-column {
   flex: 1;
-  min-width: 0; /* Prevents flex items from overflowing */
+  min-width: 0;
   transition: all 0.3s ease-in-out; 
 }
 
@@ -67,35 +68,14 @@
   transition: all 0.3s ease-in-out; 
 }
 
+.manifesto-content h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
 .man-text {
     color:#000;
 }
-
-/* Responsive design for mobile */
-@media (max-width: 768px) {
-  .search-bar {
-    width: 95%;
-    border-radius: 20px;
-    padding: 15px;
-  }
-
-  .search-icon-holder {
-    order: 1;
-  }
-
-  .party-dropdown,
-  .topic-dropdown {
-    order: 2;
-    width: 100%;
-  }
-
-  .search-controls-right {
-    order: 3;
-    width: 100%;
-    justify-content: space-between;
-  }
-}
-
 
 .result {
     padding: 10px;
@@ -105,9 +85,14 @@
     background-color: #f9f9f9;
     width: 100%;
     min-height: 100px; 
-    max-height: 600px; /* limit max height so text doesn't overflow onto the stats */
-    overflow-y: auto; /* enable scrolling */
-    transition: all 0.3s ease-in-out; /* smooth transition */
+    max-height: 600px;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.result h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .result p{
@@ -116,7 +101,7 @@
 }
 
 .result ul {
-  padding-left: 1.5rem;   /* space for bullet marker */
+  padding-left: 1.5rem;
   margin-left: 0;
   list-style-position: outside;
 }
@@ -139,11 +124,12 @@
     padding: 7px;
     border-radius: 25px;
     background-color: #04001f;
-    margin-right: 10px;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
-.search-icon-holder :hover {
-    cursor: pointer;
+.search-icon-holder:hover {
+    opacity: 0.8;
 }
 
 /* spinner stuff */
@@ -193,25 +179,32 @@
     cursor: pointer;
     font-size: 1.5em;
     color: #555;
-    padding-top: 5px;
-    margin-right: 10px;
+    padding: 5px;
+    flex-shrink: 0;
 }
   
 .help-popup {
     position: absolute;
-    top: 50px;
+    top: 100%;
     right: 10px;
+    margin-top: 10px;
     background: white;
     border: 1px solid #ddd;
     padding: 15px;
     width: 300px;
+    max-width: calc(100vw - 40px); /* Prevent overflow on mobile */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 100;
 }
   
+.help-popup h3 {
+    margin-top: 0;
+}
+
 .help-popup p {
     color: #000;
+    font-size: 0.9rem;
 }
 
 .close-button {
@@ -238,6 +231,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    flex-shrink: 0;
 }
 
 /* manifesto specific formatting */
@@ -262,4 +256,124 @@
   font-family: monospace;
   letter-spacing: 0.05em; 
   color: #666;
+}
+
+/* ============================================ */
+/* MOBILE RESPONSIVE STYLES */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  .search-bar {
+    width: 95%;
+    border-radius: 20px;
+    padding: 15px;
+    gap: 8px;
+  }
+
+  .search-icon-holder {
+    order: 10; /* Move to end (highest order) */
+    margin-right: 0;
+    width: 100%; /* Full width */
+    padding: 15px; /* Bigger padding */
+    border-radius: 12px; /* Slightly less rounded for button feel */
+    margin-top: 5px; /* Space from elements above */
+    font-size: 2rem;
+  }
+
+  #search-icon {
+    font-size: 1.5rem; /* Bigger icon */
+  }
+
+  .party-dropdown,
+  .topic-dropdown {
+    flex: 1 1 100%;
+    font-size: 16px;
+    min-width: 0;
+  }
+
+  .search-controls-right {
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .search-controls-right .MuiFormControlLabel-root {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .search-controls-right .MuiFormControlLabel-label {
+    font-size: 0.85rem;
+  }
+
+  /* Stack comparison view vertically on mobile */
+  .comparison-view {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .manifesto-column {
+    width: 100%;
+  }
+
+  .manifesto-content {
+    padding: 15px;
+    max-height: 400px;
+  }
+
+  .manifesto-content h2 {
+    font-size: 1rem;
+  }
+
+  .result {
+    padding: 15px;
+    max-height: 500px;
+  }
+
+  .result h2 {
+    font-size: 1.2rem;
+  }
+
+  .loading h2 {
+    font-size: 1.2em;
+  }
+
+  .help-popup {
+    right: 0;
+    left: 0;
+    width: auto;
+    margin: 10px 20px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .search-bar {
+    width: 98%;
+    padding: 12px;
+  }
+
+  .search-icon-holder {
+    padding: 18px; /* Even bigger on small screens */
+    font-size: 2.5rem;
+  }
+
+  #search-icon {
+    font-size: 1.5rem; /* Even bigger icon */
+  }
+
+  .manifesto-content {
+    padding: 12px;
+    max-height: 350px;
+  }
+
+  .result {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .search-controls-right .MuiFormControlLabel-label {
+    font-size: 0.8rem;
+  }
 }
