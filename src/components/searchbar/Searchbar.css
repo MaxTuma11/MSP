@@ -314,7 +314,7 @@
 
   .manifesto-content {
     padding: 15px;
-    max-height: 400px;
+    max-height: 500px; /* Increased from 400px */
   }
 
   .manifesto-content h2 {
@@ -323,7 +323,7 @@
 
   .result {
     padding: 15px;
-    max-height: 500px;
+    max-height: 600px; /* Increased from 500px */
   }
 
   .result h2 {
@@ -355,12 +355,13 @@
   
   .manifesto-content {
     padding: 12px;
-    max-height: 350px;
+    max-height: 450px; /* Increased from 350px */
   }
 
   .result {
     padding: 12px;
     font-size: 0.95rem;
+    max-height: 550px; /* Increased from default */
   }
 
   .search-controls-right .MuiFormControlLabel-label {
