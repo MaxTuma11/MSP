@@ -277,11 +277,6 @@
     padding: 15px; /* Bigger padding */
     border-radius: 12px; /* Slightly less rounded for button feel */
     margin-top: 5px; /* Space from elements above */
-    font-size: 2rem;
-  }
-
-  #search-icon {
-    font-size: 1.5rem; /* Bigger icon */
   }
 
   .party-dropdown,
@@ -356,13 +351,8 @@
 
   .search-icon-holder {
     padding: 18px; /* Even bigger on small screens */
-    font-size: 2.5rem;
   }
-
-  #search-icon {
-    font-size: 1.5rem; /* Even bigger icon */
-  }
-
+  
   .manifesto-content {
     padding: 12px;
     max-height: 350px;

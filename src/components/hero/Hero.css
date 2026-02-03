@@ -8,16 +8,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px; /* Add padding so content doesn't touch edges */
 }
 
 .hero-text{
     text-align: center;
     max-width: 800px;
+    width: 100%; /* Ensure it takes available width */
 }
 
 .hero-text h1{
     font-size: 60px;
     font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .hero-text p{
@@ -25,4 +29,60 @@
     margin: 10px auto 20px;
     line-height: 1.4;
     font-size: large;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px; /* Much smaller for mobile */
+        margin-bottom: 15px;
+    }
+
+    .hero-text p {
+        font-size: 16px; /* Standard readable size */
+        line-height: 1.6; /* Better readability */
+        margin: 15px auto;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        font-size: 16px;
+        white-space: normal; /* Allow text to wrap if needed */
+        text-align: center;
+    }
+
+    .btn img {
+        width: 16px; /* Ensure arrow scales appropriately */
+        height: auto;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px; /* Even smaller for tiny screens */
+        line-height: 1.3;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+        margin: 12px auto;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
 }
