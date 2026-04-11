@@ -18,8 +18,9 @@ try {
   run("node scripts/fetchElectionDataVault.js", "Fetching Election Data Vault");
   run("node scripts/fetchPublicWhip.js", "Fetching Public Whip data");
 
-  run("python scripts/aggregate_publicwhip.py", "Aggregating MP stats");
-  run("python scripts/compute_party_averages.py", "Computing party averages");
+  // run aggregations and averages once they are implemented
+  //run("python3 scripts/aggregate_publicwhip.py", "Aggregating MP stats");
+  //run("python3 scripts/compute_party_averages.py", "Computing party averages");
 
   console.log("\nDaily data update completed successfully");
 } catch (error) {

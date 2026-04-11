@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 import fs from 'fs';
 import path from 'path';
 
@@ -91,7 +91,7 @@ export default async function fetchElectionDataVault() {
     }
 
     //prefer UK polls over GB polls
-    const pols = Array.from(pollsMap.values()).filter(poll => {
+    const polls = Array.from(pollsMap.values()).filter(poll => {
         if (poll.area === "GB") return true;
 
         return !Array.from(pollsMap.values()).some(
@@ -105,7 +105,7 @@ export default async function fetchElectionDataVault() {
 
     //sort newest first
     polls.sort((a, b) => {
-        return new Date(b.end_date) - new Date(a.end_date);
+        return new Date(b.endDate) - new Date(a.endDate);
     });
 
     fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
@@ -115,3 +115,12 @@ export default async function fetchElectionDataVault() {
         `Saved ${polls.length} polls to ${path.relative(process.cwd(), OUTPUT_PATH)}`
     );
 }
+
+//allow direct execution: `node scripts/fetchPublicWhip.js`
+if (process.argv[1].includes("fetchElectionDataVault")) {
+    fetchElectionDataVault().catch(err => {
+      console.error("ElectionDataVault fetch failed:", err);
+      process.exit(1);
+    });
+  }
+  
