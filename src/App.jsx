@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Summaries from './pages/Summaries'
 import About from './pages/About'
 import Data from './pages/Data'
+import Quiz from './pages/Quiz'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/Summaries" element={<Summaries/>}/>
         <Route path="/Data" element={<Data/>}/>
         <Route path="/About" element={<About/>}/>
+        <Route path="/Quiz" element={<Quiz/>}/>
       </Routes>
     </Router>
   )

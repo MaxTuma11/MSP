@@ -38,8 +38,9 @@ const Navbar = () => {
       <ul className={mobileMenuOpen ? 'mobile-menu-open' : ''}>
         <li><Link to="/" onClick={closeMobileMenu}>Home</Link></li>
         <li><Link to="/Summaries" onClick={closeMobileMenu}>Manifesto Summaries</Link></li>
+        <li><Link to="/Quiz" onClick={closeMobileMenu}>Engagement Quiz</Link></li>
         <li><Link to="/Data" onClick={closeMobileMenu}>Raw Data</Link></li>
-        <li id='about'><Link to="/About" className='btn' onClick={closeMobileMenu}>About Us</Link></li>
+        <li><Link to="/About" onClick={closeMobileMenu}>About Us</Link></li>
       </ul>
     </nav>
   )

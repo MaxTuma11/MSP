@@ -1,6 +1,5 @@
 import React from 'react'
 import './Hero.css'
-import dark_arrow from '../../assets/dark-arrow.jpg'
 import { Link } from "react-router-dom"
 
 const Hero = () => {
@@ -16,7 +15,7 @@ const Hero = () => {
         <p>
         Click the button below to visit the Manifesto Summaries!
         </p>
-        <Link to="/Summaries" className='btn'>Manifesto Summaries <img src={dark_arrow} alt='' /></Link>
+        <Link to="/Summaries" className='btn'>Manifesto Summaries</Link>
       </div>
     </div>
   )
