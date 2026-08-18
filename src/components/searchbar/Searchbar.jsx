@@ -105,7 +105,7 @@ const Searchbar = () => {
             return;
           }
 
-          const partyData2 = summarisedManifestos[selectedPartyToo];
+          const partyData2 = summarisedManifestosDetail[selectedPartyToo];
 
           if (!partyData2) {
             setResult2('Party not found. Please select a valid party.');
