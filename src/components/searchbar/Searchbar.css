@@ -1,18 +1,46 @@
 .search-bar{
     background-color: white;
-    width: 80%;
-    border-radius: 46px;
-    height: auto; /* Changed from fixed 5.5rem */
+    width: 99%; /* was 80% */
+    border-radius: 30px;
+    height: auto;
     min-height: 5.5rem;
-    padding: 10px 15px;
+    padding: 20px;
     box-shadow: 0px 0px 8px #ddd;
     display: flex;
-    align-items: center;
-    flex-wrap: wrap; /* Fixed typo: was "flex: wrap" */
+    flex-direction: column;
+    gap: 15px;
     position: relative;
-    gap: 10px; /* Add gap for better spacing */
 }
- 
+
+.search-bar-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.search-bar-top {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-bar-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search-toggles {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
 /* drop downs for party and topic selection */
 
 .party-dropdown,
@@ -117,15 +145,26 @@
     width: 20px;
     font-size: 1.5rem;
 }
+
+.search-action-row {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
 .search-icon-holder {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 7px;
-    border-radius: 25px;
+    flex: 1; /* was width: 100% */
+    padding: 12px;
+    border-radius: 16px;
     background-color: #04001f;
     cursor: pointer;
-    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.help-button-mobile {
+    display: none; /* hidden except on extra small screens */
 }
 
 .search-icon-holder:hover {
@@ -267,16 +306,11 @@
     width: 95%;
     border-radius: 20px;
     padding: 15px;
-    gap: 8px;
+    gap: 10px;
   }
 
-  .search-icon-holder {
-    order: 10; /* Move to end (highest order) */
-    margin-right: 0;
-    width: 100%; /* Full width */
-    padding: 15px; /* Bigger padding */
-    border-radius: 12px; /* Slightly less rounded for button feel */
-    margin-top: 5px; /* Space from elements above */
+  .search-bar-top {
+    flex-direction: column;
   }
 
   .party-dropdown,
@@ -286,23 +320,25 @@
     min-width: 0;
   }
 
-  .search-controls-right {
+  .search-bar-bottom {
     width: 100%;
-    margin-left: 0;
     justify-content: space-between;
-    gap: 10px;
   }
 
-  .search-controls-right .MuiFormControlLabel-root {
+  .search-toggles .MuiFormControlLabel-root {
     margin: 0;
     font-size: 0.9rem;
   }
 
-  .search-controls-right .MuiFormControlLabel-label {
+  .search-toggles .MuiFormControlLabel-label {
     font-size: 0.85rem;
   }
 
-  /* Stack comparison view vertically on mobile */
+  .search-icon-holder {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
   .comparison-view {
     flex-direction: column;
     gap: 20px;
@@ -314,7 +350,7 @@
 
   .manifesto-content {
     padding: 15px;
-    max-height: 500px; /* Increased from 400px */
+    max-height: 500px;
   }
 
   .manifesto-content h2 {
@@ -323,7 +359,7 @@
 
   .result {
     padding: 15px;
-    max-height: 600px; /* Increased from 500px */
+    max-height: 600px;
   }
 
   .result h2 {
@@ -343,28 +379,41 @@
 }
 
 /* Extra small screens */
-@media (max-width: 480px) {
+@media (max-width: 549px) {
   .search-bar {
-    width: 98%;
     padding: 12px;
   }
 
-  .search-icon-holder {
-    padding: 18px; /* Even bigger on small screens */
-  }
-  
   .manifesto-content {
     padding: 12px;
-    max-height: 450px; /* Increased from 350px */
+    max-height: 450px;
   }
 
   .result {
     padding: 12px;
     font-size: 0.95rem;
-    max-height: 550px; /* Increased from default */
+    max-height: 550px;
   }
 
-  .search-controls-right .MuiFormControlLabel-label {
+  .search-toggles .MuiFormControlLabel-label {
     font-size: 0.8rem;
+  }
+
+  .help-button-desktop {
+    display: none;
+  }
+
+  .help-button-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: #04001f;
+    border-radius: 16px;
+    padding: 0 16px;
+  }
+
+  .help-button-mobile #question {
+    color: white;
   }
 }

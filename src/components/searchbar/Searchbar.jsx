@@ -7,7 +7,7 @@ import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { alpha, styled } from '@mui/material/styles';
 import summarisedManifestos from '../../data/summarised_manifestos.json';
-
+import summarisedManifestosDetail from '../../data/summarised_manifestos_detail.json';
 
 
 //list of topics that are used for the dropdown
@@ -38,6 +38,7 @@ const parties = [
   "Traditional Unionist Voice (TUV)",
   "Ulster Unionist Party (UUP)",
   "Social Democratic and Labour Party (SDLP)",
+  "Restore UK",
 ]
 
 const Searchbar = () => {
@@ -52,6 +53,7 @@ const Searchbar = () => {
   const [displayedParty, setDisplayedParty] = useState("Select Party");
   const [displayedParty2, setDisplayedParty2] = useState("Select Party Two");
   const [compareMode, setCompareMode] = useState(false);
+  const [detailMode, setDetailMode] = useState(false);
 
   //styled switch for compare mode
   const PinkSwitch = styled(Switch)(({ theme }) => ({
@@ -78,51 +80,100 @@ const Searchbar = () => {
       setDisplayedParty2(selectedPartyToo);
     }
 
-    try {
-      const partyData = summarisedManifestos[selectedParty];
-
-      if (!partyData) {
-        setResult('Party not found. Please select a valid party.');
-        return;
-      }
-
-      const topicData = partyData[selectedTopic.toLowerCase()];
-
-      if (!topicData) {
-        setResult('Topic not found. Please select a valid topic.');
-        return;
-      }
-
-      setResult(topicData);
-
-      // ----- COMPARE MODE -----
-      if (compareMode) {
-        if (selectedPartyToo === "Select Party Two") {
-          setResult2('Please select a party to display the summarised manifesto');
+    if (detailMode) {
+      try {
+        const partyData = summarisedManifestosDetail[selectedParty];
+        
+        if (!partyData) {
+          setResult('Party not found. Please select a valid party.');
           return;
         }
 
-        const partyData2 = summarisedManifestos[selectedPartyToo];
+        const topicData = partyData[selectedTopic.toLowerCase()];
 
-        if (!partyData2) {
-          setResult2('Party not found. Please select a valid party.');
+        if (!topicData) {
+          setResult('Topic not found. Please select a valid topic.');
           return;
         }
 
-        const topicData2 = partyData2[selectedTopic.toLowerCase()];
+        setResult(topicData);
 
-        if (!topicData2) {
-          setResult2('Topic not found. Please select a valid topic.');
-          return;
+        // ----- COMPARE MODE -----
+        if (compareMode) {
+          if (selectedPartyToo === "Select Party Two") {
+            setResult2('Please select a party to display the summarised manifesto');
+            return;
+          }
+
+          const partyData2 = summarisedManifestos[selectedPartyToo];
+
+          if (!partyData2) {
+            setResult2('Party not found. Please select a valid party.');
+            return;
+          }
+
+          const topicData2 = partyData2[selectedTopic.toLowerCase()];
+
+          if (!topicData2) {
+            setResult2('Topic not found. Please select a valid topic.');
+            return;
+          }
+          setResult2(topicData2);
         }
-        setResult2(topicData2);
       }
+      catch (error) {
+        console.error('Error reading manifesto data:', error);
+        setResult('Error loading manifesto data. Please try again later.');
+      } finally {
+        setTimeout(() => setLoading(false), 2000 + Math.random() * 2000);
+      }
+    } else {
+      try {
+        const partyData = summarisedManifestos[selectedParty];
 
-    } catch (error) {
-      console.error('Error reading manifesto data:', error);
-      setResult('Error loading manifesto data. Please try again later.');
-    } finally {
-      setTimeout(() => setLoading(false), 2000 + Math.random() * 2000);
+        if (!partyData) {
+          setResult('Party not found. Please select a valid party.');
+          return;
+        }
+
+        const topicData = partyData[selectedTopic.toLowerCase()];
+
+        if (!topicData) {
+          setResult('Topic not found. Please select a valid topic.');
+          return;
+        }
+
+        setResult(topicData);
+
+        // ----- COMPARE MODE -----
+        if (compareMode) {
+          if (selectedPartyToo === "Select Party Two") {
+            setResult2('Please select a party to display the summarised manifesto');
+            return;
+          }
+
+          const partyData2 = summarisedManifestos[selectedPartyToo];
+
+          if (!partyData2) {
+            setResult2('Party not found. Please select a valid party.');
+            return;
+          }
+
+          const topicData2 = partyData2[selectedTopic.toLowerCase()];
+
+          if (!topicData2) {
+            setResult2('Topic not found. Please select a valid topic.');
+            return;
+          }
+          setResult2(topicData2);
+        }
+
+      } catch (error) {
+        console.error('Error reading manifesto data:', error);
+        setResult('Error loading manifesto data. Please try again later.');
+      } finally {
+        setTimeout(() => setLoading(false), 2000 + Math.random() * 2000);
+      }
     }
   };
 
@@ -157,50 +208,67 @@ const Searchbar = () => {
   //toggle compare mode
   const toggleCompare = (event) => setCompareMode(event.target.checked);
 
+  //toggle detail mode
+  const toggleDetail = (event) => setDetailMode(event.target.checked);
+
   return (
     <>
       <div className="search-bar">
 
-        <div className="search-icon-holder" onClick={fetchManifestoSummary}>
-          <TbListSearch id="search-icon" />
+        <div className="search-bar-content">
+          <div className="search-bar-top">
+            <select className="party-dropdown" value={selectedParty} onChange={(e) => setSelectedParty(e.target.value)}>
+              <option value="Select Party" disabled hidden>Select Party</option>
+              {parties.map((party) => (
+                <option key={party} value={party}>
+                  {party}
+                </option>
+              ))}
+            </select>
+
+            { compareMode && (
+              <select className="party-dropdown" value={selectedPartyToo} onChange={(e) => setSelectedPartyToo(e.target.value)}>
+                <option value="Select Party Two" disabled hidden>Select Party Two</option>
+                {parties.map((party) => (
+                  <option key={party} value={party}>
+                    {party}
+                  </option>
+                ))}
+              </select>
+            )}
+
+            <select className="topic-dropdown" value={selectedTopic} onChange={(e) => setSelectedTopic(e.target.value)}>
+              <option value="Select Topic" disabled hidden>Select Topic</option>
+              {topics.map((topic) => (
+                <option key={topic} value={topic}>
+                  {topic}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="search-bar-bottom">
+            <div className="search-toggles">
+              <FormControlLabel control={<PinkSwitch color="secondary" checked={compareMode} onChange={toggleCompare} />} label="Compare Summaries:" labelPlacement="start" />
+              <FormControlLabel control={<PinkSwitch color="secondary" checked={detailMode} onChange={toggleDetail} />} label="Detail View:" labelPlacement="start" />
+            </div>
+
+            <button className="help-button help-button-desktop" onClick={toggleHelp}>
+              <FaQuestionCircle id="question"/>
+            </button>
+          </div>
         </div>
-      
-        <select className="party-dropdown" value={selectedParty} onChange={(e) => setSelectedParty(e.target.value)}>
-          <option value="Select Party" disabled hidden>Select Party</option>
-          {parties.map((party) => (
-            <option key={party} value={party}>
-              {party}
-            </option>
-          ))}
-        </select>
 
-        { compareMode && (
-          <select className="party-dropdown" value={selectedPartyToo} onChange={(e) => setSelectedPartyToo(e.target.value)}>
-            <option value="Select Party Two" disabled hidden>Select Party Two</option>
-            {parties.map((party) => (
-              <option key={party} value={party}>
-                {party}
-              </option>
-            ))}
-          </select>
-        )}
+        <div className="search-action-row">
+          <div className="search-icon-holder" onClick={fetchManifestoSummary}>
+            <TbListSearch id="search-icon" />
+          </div>
 
-        <select className="topic-dropdown" value={selectedTopic} onChange={(e) => setSelectedTopic(e.target.value)}>
-          <option value="Select Topic" disabled hidden>Select Topic</option>
-          {topics.map((topic) => (
-            <option key={topic} value={topic}>
-              {topic}
-            </option>
-          ))}
-        </select>
-
-        <div className="search-controls-right">
-          <FormControlLabel control={<PinkSwitch color="secondary" checked={compareMode} onChange={toggleCompare} />} label="Compare Summaries:" labelPlacement="start" />
-
-          <button className="help-button" onClick={toggleHelp}>
+          <button className="help-button help-button-mobile" onClick={toggleHelp}>
             <FaQuestionCircle id="question"/>
           </button>
         </div>
+
         {showHelp && (
           <div className="help-popup">
             <button className="close-button" onClick={toggleHelp}>
@@ -212,7 +280,7 @@ const Searchbar = () => {
             <p>Press the search button on the left side of the searchbar.</p>
           </div>
         )}
-      
+
       </div>
 
       {loading ? (
