@@ -1,5 +1,5 @@
 file: votematrix-2024.csv covering commons parliament 2024
-file created: Sat Apr 11 09:10:03 2026by https://www.publicwhip.org.uk/
+file created: Wed Aug 19 09:08:40 2026by https://www.publicwhip.org.uk/
 650 mps
 206 divisions
 

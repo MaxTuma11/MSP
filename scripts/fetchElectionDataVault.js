@@ -1,9 +1,8 @@
 import fetch from 'node-fetch';
-import * as cheerio from 'cheerio';
 import fs from 'fs';
 import path from 'path';
 
-const URL = 'https://electiondatavault.co.uk/tables/polling/vi-polls/';
+const URL = 'https://storage.googleapis.com/election-data-vault-charts/downloads/opinion_polls_raw.json';
 
 const OUTPUT_PATH = path.resolve("src/data/polling.json");
 
@@ -13,9 +12,15 @@ function normaliseParty(name) {
 
 function normaliseArea(area) {
     //prefer UK-wise polls over GB-wise polls
-    if (area == "United Kingdom") return "UK";
-    if (area == "Great Britain") return "GB";
+    if (area === "United Kingdom") return "UK";
+    if (area === "Great Britain") return "GB";
     return area;
+}
+
+// The feed gives dates like "2026-07-01T00:00:00.000" - trim to just the date part
+function normaliseDate(dateString) {
+    if (!dateString) return dateString;
+    return dateString.split("T")[0];
 }
 
 export default async function fetchElectionDataVault() {
@@ -26,43 +31,21 @@ export default async function fetchElectionDataVault() {
         throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
     }
 
-    const html = await res.text();
-    const $ = cheerio.load(html);
+    const records = await res.json();
 
-    const rows = [];
-
-    $("#footable_104 tbody tr").each((_, tr) => {
-        const cells = $(tr)
-            .find("td")
-            .map((_, td) => $(td).text().trim())
-            .get();
-
-        if (cells.length !== 7) return;
-
-        const [
-            startDate,
-            endDate,
-            area,
-            pollster,
-            client,
-            party,
-            votingIntention
-        ] = cells;
-
-        rows.push({
-            startDate,
-            endDate,
-            area: normaliseArea(area),
-            pollster,
-            client: client === "NA" ? null : client,
-            party: normaliseParty(party),
-            value: Number(votingIntention)
-        });
-    });
-
-    if (rows.length === 0) {
-        throw new Error("No polling data found. Page structure may have changed.");
+    if (!Array.isArray(records) || records.length === 0) {
+        throw new Error("No polling data found. Feed structure may have changed.");
     }
+
+    const rows = records.map(record => ({
+        startDate: normaliseDate(record.start_date),
+        endDate: normaliseDate(record.end_date),
+        area: normaliseArea(record.country_name),
+        pollster: record.pollster_name,
+        client: record.client ?? null,
+        party: normaliseParty(record.party_name),
+        value: Number(record.voting_intention)
+    }));
 
     //group into polls
     const pollsMap = new Map();
@@ -95,7 +78,7 @@ export default async function fetchElectionDataVault() {
         if (poll.area === "GB") return true;
 
         return !Array.from(pollsMap.values()).some(
-            p => 
+            p =>
                 p.pollster === poll.pollster &&
                 p.startDate === poll.startDate &&
                 p.endDate === poll.endDate &&
@@ -122,5 +105,4 @@ if (process.argv[1].includes("fetchElectionDataVault")) {
       console.error("ElectionDataVault fetch failed:", err);
       process.exit(1);
     });
-  }
-  
+}
