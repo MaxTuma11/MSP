@@ -52,19 +52,10 @@ export default function PollingChart() {
   );
 
   return (
-    <div style={{ width: "100%", padding: "1rem 0" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-        <h2 style={{ fontSize: 16, fontWeight: 500, margin: 0 }}>GB voting intention</h2>
-        <label style={{ fontSize: 13, color: "#666" }}>
-          Rolling window:{" "}
-          <select value={windowDays} onChange={e => setWindowDays(Number(e.target.value))}>
-            <option value={7}>7 days</option>
-            <option value={14}>14 days</option>
-            <option value={21}>21 days</option>
-            <option value={28}>28 days</option>
-          </select>
-        </label>
-      </div>
+    <div style={{ width: "100%", padding: "2rem 0 1rem" }}>
+      <h2 style={{ fontSize: 16, fontWeight: 500, margin: "0 0 16px", color: "white", textAlign: "center" }}>
+        GB voting intention
+      </h2>
 
       <ResponsiveContainer width="100%" height={360}>
         <LineChart data={chartData} margin={{ top: 5, right: 20, bottom: 20, left: 0 }}>
