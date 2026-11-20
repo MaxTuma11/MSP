@@ -1,9 +1,15 @@
+
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - main
+
+  pull_request:
+    branches:
+      - main
+
   workflow_dispatch:
 
 permissions:
@@ -20,20 +26,29 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
+      # Run all Vitest tests before building
+      - name: Run tests
+        run: npx vitest run
+
       - name: Build site
         run: npm run build
 
+      # Only prepare deployment on main or manual dispatch
       - name: Set Git identity
+        if: github.event_name != 'pull_request'
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
 
+      # Deploy only if tests and build succeeded
       - name: Deploy to GitHub Pages
+        if: github.event_name != 'pull_request'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run deploy
