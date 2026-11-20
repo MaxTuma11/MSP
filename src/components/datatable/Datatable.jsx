@@ -85,7 +85,7 @@ const Datatable = () => {
         <h1>Data Sources</h1>
         <p>
             This project aims to be as transparent as possible with where the data is coming from and how it is being used.
-            Because of that, all of the manifestos used for summarisation and word analysis are linked below.
+            Because of that, all of the manifestos used for summarisation are linked below.
             This also provides anyone using the website with a complete and factual view of the manifesto that has not been summarised in any way.
             Additionally, data used for party statistics, such as the attendance and rebellion rates, is linked below so you can explore their data as well.
             It is also very important to note when this data was collected. Even though manifestos do not change often, party statistics do.
