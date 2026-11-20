@@ -1,4 +1,3 @@
-import React from 'react'
 import './About.css'
 import Navbar from '../components/navbar/Navbar'
 
@@ -17,9 +16,9 @@ const About = () => {
             - Evaluate the summaries of political manifestos. <br></br>
             - Maintain political impartiality.
         </p>
-        <h2>What is its' purpose?</h2>
+        <h2>What is its purpose?</h2>
         <p>
-            The purpose of the Manifesto Summarisation Project is to improve a users' understanding of UK politics using summarised manifestos.
+            The purpose of the Manifesto Summarisation Project is to improve users&apos; understanding of UK politics using summarised manifestos.
             It also aims to help this understanding with visualised data from the manifestos and key topic summaries.
             Being politically engaged is very important to the healthy function of democracy.
             This project is aiming to improve that engagement using summarisation algorithms to help people read manifestos.
@@ -36,7 +35,7 @@ const About = () => {
         </p>
         <h2>Does this project receive any funding?</h2>
         <p>
-            This project does not receive any funding. 
+            This project does not receive any funding.
             It is highly unlikely that the project will ever be funded as it could create a conflict of interest.
             The project is meant to be completely unbiased and to provide purely factual information on politics.
             If that is not the case, then the project has failed as it will be misleading people.
@@ -46,11 +45,11 @@ const About = () => {
         </p>
         <h2>Does this project use any personal data?</h2>
         <p>
-            There are no data collection processes on this website. 
+            There are no data collection processes on this website.
             As of right now there is no need for the website to have any accounts or user data.
             This may change in the future as the website progresses and expands its applications.
             Even if there are accounts in the future, data collection is not something the project would ever do.
-            Data collection does not pose useful as most metrics collected would be meaningless. 
+            Data collection does not pose useful as most metrics collected would be meaningless.
             Surveys and Questionnaires are more likely data collection methods for the future to gauge user feelings.
         </p>
       </div>
@@ -68,7 +67,7 @@ const About = () => {
             This means during summarisation there is less information for the model to pull from.
             Therefore the summaries may be shorter or less detailed.
         </p>
-        <h2>I don't know what to do on the website?</h2>
+        <h2>I don&apos;t know what to do on the website?</h2>
         <p>
             The main purpose of the website is the Summaries page.
             Here you can select one or two (if you want to compare) political parties and see their manifestos summarised.

@@ -6,11 +6,11 @@ const URL = 'https://storage.googleapis.com/election-data-vault-charts/downloads
 
 const OUTPUT_PATH = path.resolve("src/data/polling.json");
 
-function normaliseParty(name) {
+export function normaliseParty(name) {
     return name.trim();
 }
 
-function normaliseArea(area) {
+export function normaliseArea(area) {
     //prefer UK-wise polls over GB-wise polls
     if (area === "United Kingdom") return "UK";
     if (area === "Great Britain") return "GB";
@@ -18,7 +18,7 @@ function normaliseArea(area) {
 }
 
 // The feed gives dates like "2026-07-01T00:00:00.000" - trim to just the date part
-function normaliseDate(dateString) {
+export function normaliseDate(dateString) {
     if (!dateString) return dateString;
     return dateString.split("T")[0];
 }
@@ -51,12 +51,11 @@ export default async function fetchElectionDataVault() {
     const pollsMap = new Map();
 
     for (const row of rows) {
-        //skip GB rows if UK equiv exists
         const key = [
             row.pollster,
             row.startDate,
             row.endDate,
-            row.area === "GB" ? "UK" : row.area,
+            row.area,
         ].join("|");
 
         if (!pollsMap.has(key)) {
@@ -74,15 +73,17 @@ export default async function fetchElectionDataVault() {
     }
 
     //prefer UK polls over GB polls
-    const polls = Array.from(pollsMap.values()).filter(poll => {
-        if (poll.area === "GB") return true;
+    const allPolls = Array.from(pollsMap.values());
 
-        return !Array.from(pollsMap.values()).some(
+    const polls = allPolls.filter(poll => {
+        if (poll.area !== "GB") return true;
+
+        return !allPolls.some(
             p =>
+                p.area === "UK" &&
                 p.pollster === poll.pollster &&
                 p.startDate === poll.startDate &&
-                p.endDate === poll.endDate &&
-                p.area === "UK"
+                p.endDate === poll.endDate
         );
     });
 

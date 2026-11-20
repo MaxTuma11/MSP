@@ -14,7 +14,8 @@ const COLORS = {
   "Plaid Cymru": "#3BB393",
 };
 
-function buildRollingAverages(polls, windowDays) {
+// Exported so it can be unit tested directly, without needing to render the component.
+export function buildRollingAverages(polls, windowDays) {
   const ms = windowDays * 86_400_000;
 
   const gbPolls = polls

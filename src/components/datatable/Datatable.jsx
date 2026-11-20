@@ -1,4 +1,3 @@
-import React from 'react'
 import './Datatable.css'
 
 const Datatable = () => {
@@ -61,7 +60,7 @@ const Datatable = () => {
         },
         {
             id: 12,
-            name: "Social Decomratic and Labour Party",
+            name: "Social Democratic and Labour Party",
             url: "https://assets.nationbuilder.com/sdlp/pages/753/attachments/original/1719422488/SDLP_Manifesto_2024.pdf"
         },
         {

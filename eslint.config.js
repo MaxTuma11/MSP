@@ -34,5 +34,9 @@ export default [
         { allowConstantExport: true },
       ],
     },
+    files: ["scripts/**/*.js"],
+    languageOptions: {
+      globals: globals.node,
+    },
   },
 ]

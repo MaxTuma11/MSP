@@ -24,6 +24,6 @@ try {
 
   console.log("\nDaily data update completed successfully");
 } catch (error) {
-  console.error("\nDaily update failed");
+  console.error("\nDaily update failed", error);
   process.exit(1);
 }

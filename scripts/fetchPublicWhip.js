@@ -2,9 +2,9 @@ import fetch from "node-fetch";
 import fs from "fs";
 import path from "path";
 
-const BASE_URL = "https://www.publicwhip.org.uk";
+export const BASE_URL = "https://www.publicwhip.org.uk";
 
-const FILES = [
+export const FILES = [
   {
     url: "/data/votematrix-2024.txt",
     output: "src/data/publicwhip/votematrix-2024.txt",
