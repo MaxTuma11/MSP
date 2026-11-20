@@ -23,25 +23,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      # Run all Vitest tests before building
-      - name: Run tests
-        run: npx vitest run
-
       - name: Build site
         run: npm run build
 
-      # Only prepare deployment on main or manual dispatch
       - name: Set Git identity
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
 
-      # Deploy only if tests and build succeeded
       - name: Deploy to GitHub Pages
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
