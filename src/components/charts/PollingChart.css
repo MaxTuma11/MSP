@@ -1,0 +1,222 @@
+/* Polling chart — scoped styles; uses Outfit from index.css. */
+.polling-chart {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem clamp(16px, 3vw, 48px) 1rem;
+  font-family: "Outfit", sans-serif;
+}
+
+.polling-chart-header,
+.polling-chart-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.polling-chart-header {
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.polling-chart-controls {
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.polling-chart-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+
+.polling-select-label {
+  color: #ddd;
+  font-size: 12px;
+}
+
+.polling-chart .polling-select,
+.polling-chart .polling-select option {
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #171717;
+}
+
+.polling-chart .polling-select {
+  margin-left: 8px;
+  padding: 7px 10px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.polling-button-group {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.polling-chart .polling-button {
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 7px 12px;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.polling-chart .polling-button:hover:not(.active) {
+  background-color: #302a48;
+}
+
+.polling-chart .polling-button.active {
+  border-color: #d35424;
+  background-color: #c43d15;
+  font-weight: 600;
+}
+
+.polling-chart .polling-button:focus-visible,
+.polling-chart .polling-select:focus-visible {
+  outline: 2px solid #b4ace2;
+  outline-offset: 2px;
+}
+
+.polling-chart-plot {
+  position: relative;
+  width: 100%;
+}
+
+.polling-chart .recharts-text,
+.polling-chart .recharts-legend-item-text {
+  font-family: "Outfit", sans-serif;
+}
+
+.polling-chart .recharts-cartesian-axis-tick text,
+.polling-chart .recharts-label {
+  fill: #bdbdbd;
+}
+
+.polling-chart .recharts-cartesian-axis line,
+.polling-chart .recharts-cartesian-axis path {
+  stroke: #888;
+}
+
+.polling-chart .recharts-label {
+  text-anchor: middle;
+}
+
+.polling-chart .recharts-legend-wrapper {
+  font-size: 12px;
+}
+
+/* Raw SVG points cannot capture pointer events. */
+.polling-raw-dot {
+  fill-opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Hover is separate from Recharts to avoid re-rendering all raw dots. */
+.polling-hover-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.polling-hover-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.polling-hover-guide {
+  position: absolute;
+  left: var(--hover-x);
+  top: var(--hover-top);
+  height: var(--hover-height);
+  border-left: 1px dashed #888;
+}
+
+.polling-hover-tooltip {
+  position: absolute;
+  left: var(--tooltip-x);
+  top: calc(var(--hover-top) + 10px);
+  z-index: 5;
+}
+
+.polling-tooltip {
+  background: #171717;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 12px;
+  color: #fff;
+  min-width: 165px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.polling-tooltip-date {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.polling-tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.polling-tooltip-party {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.polling-tooltip-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+/* These indices correspond to the PARTIES order in PollingChart.jsx. */
+.polling-tooltip-dot-0 { background-color: #00d5e6; } /* Reform UK */
+.polling-tooltip-dot-1 { background-color: #ff4040; } /* Labour */
+.polling-tooltip-dot-2 { background-color: #4da3ff; } /* Conservative */
+.polling-tooltip-dot-3 { background-color: #7ed957; } /* Green Party */
+.polling-tooltip-dot-4 { background-color: #f5b642; } /* Liberal Democrats */
+.polling-tooltip-dot-5 { background-color: #c8a400; } /* SNP */
+.polling-tooltip-dot-6 { background-color: #3bb393; } /* Plaid Cymru */
+.polling-tooltip-dot-7 { background-color: #999999; } /* Other */
+
+.polling-empty {
+  color: #aaa;
+  text-align: center;
+  padding: 4rem;
+}
+
+.polling-chart-note {
+  color: #aaa;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .polling-chart-header,
+  .polling-chart-controls {
+    align-items: flex-start;
+  }
+
+  .polling-chart .polling-button {
+    padding: 7px 9px;
+  }
+}
