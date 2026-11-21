@@ -1,6 +1,6 @@
 file: votematrix-2024.csv covering commons parliament 2024
-file created: Wed Aug 19 09:08:40 2026by https://www.publicwhip.org.uk/
-650 mps
+file created: Fri Nov 20 09:09:37 2026by https://www.publicwhip.org.uk/
+661 mps
 206 divisions
 
 
@@ -34,6 +34,7 @@ mpid	firstname	surname	party	PublicWhip URL
 42832	Rosena	Allin-Khan	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42832
 43395	Jim	Allister	Traditional Unionist Voice	https://www.publicwhip.org.uk/mp.php?mpid=43395
 42853	Mike	Amesbury	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42853
+43446	Mike	Amesbury	Independent	https://www.publicwhip.org.uk/mp.php?mpid=43446
 43240	Gideon	Amos	LDem	https://www.publicwhip.org.uk/mp.php?mpid=43240
 42938	Callum	Anderson	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42938
 42827	Fleur	Anderson	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42827
@@ -102,11 +103,13 @@ mpid	firstname	surname	party	PublicWhip URL
 42881	Alex	Burghart	Con	https://www.publicwhip.org.uk/mp.php?mpid=42881
 43252	Richard	Burgon	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43252
 43434	Richard	Burgon	Independent	https://www.publicwhip.org.uk/mp.php?mpid=43434
+43440	Richard	Burgon	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43440
 43081	Maureen	Burke	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43081
 43059	David	Burton-Sampson	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43059
 42916	Dawn	Butler	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42916
 42879	Ian	Byrne	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42879
 43435	Ian	Byrne	Independent	https://www.publicwhip.org.uk/mp.php?mpid=43435
+43441	Ian	Byrne	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43441
 43189	Liam	Byrne	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43189
 42935	Ruth	Cadbury	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42935
 43117	Nesil	Caliskan	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43117
@@ -274,6 +277,7 @@ mpid	firstname	surname	party	PublicWhip URL
 42995	Nia	Griffith	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42995
 43245	Alison	Griffiths	Con	https://www.publicwhip.org.uk/mp.php?mpid=43245
 43212	Andrew	Gwynne	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43212
+43444	Andrew	Gwynne	Independent	https://www.publicwhip.org.uk/mp.php?mpid=43444
 43069	Amanda	Hack	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43069
 43103	Louise	Haigh	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43103
 43005	Sarah	Hall	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43005
@@ -313,6 +317,7 @@ mpid	firstname	surname	party	PublicWhip URL
 43362	Adnan	Hussain	Independent	https://www.publicwhip.org.uk/mp.php?mpid=43362
 43309	Imran	Hussain	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43309
 43436	Imran	Hussain	Independent	https://www.publicwhip.org.uk/mp.php?mpid=43436
+43442	Imran	Hussain	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43442
 42955	Leigh	Ingham	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42955
 42984	Natasha	Irons	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42984
 42986	Sally	Jameson	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42986
@@ -366,7 +371,7 @@ mpid	firstname	surname	party	PublicWhip URL
 43165	Graham	Leadbitter	SNP	https://www.publicwhip.org.uk/mp.php?mpid=43165
 43281	Edward	Leigh	Con	https://www.publicwhip.org.uk/mp.php?mpid=43281
 43157	Brian	Leishman	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43157
-42790	Emma	Lewell-Buck	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42790
+42790	Emma	Lewell	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42790
 42930	Andrew	Lewin	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42930
 42850	Clive	Lewis	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42850
 42966	Julian	Lewis	Con	https://www.publicwhip.org.uk/mp.php?mpid=42966
@@ -375,8 +380,10 @@ mpid	firstname	surname	party	PublicWhip URL
 43243	Seamus	Logan	SNP	https://www.publicwhip.org.uk/mp.php?mpid=43243
 43272	Rebecca	Long-Bailey	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43272
 43437	Rebecca	Long-Bailey	Independent	https://www.publicwhip.org.uk/mp.php?mpid=43437
+43443	Rebecca	Long-Bailey	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43443
 43232	Julia	Lopez	Con	https://www.publicwhip.org.uk/mp.php?mpid=43232
 42900	Rupert	Lowe	Reform UK	https://www.publicwhip.org.uk/mp.php?mpid=42900
+43447	Rupert	Lowe	Independent	https://www.publicwhip.org.uk/mp.php?mpid=43447
 42807	Josh	MacAlister	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42807
 43330	James	MacCleary	LDem	https://www.publicwhip.org.uk/mp.php?mpid=43330
 43070	Alice	Macdonald	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43070
@@ -466,6 +473,7 @@ mpid	firstname	surname	party	PublicWhip URL
 43181	Jesse	Norman	Con	https://www.publicwhip.org.uk/mp.php?mpid=43181
 42950	Alex	Norris	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42950
 43223	Dan	Norris	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43223
+43448	Dan	Norris	Independent	https://www.publicwhip.org.uk/mp.php?mpid=43448
 43029	Neil	O&#39;Brien	Con	https://www.publicwhip.org.uk/mp.php?mpid=43029
 43417	Brendan	O&#39;Hara	SNP	https://www.publicwhip.org.uk/mp.php?mpid=43417
 42883	Ben	Obese-Jecty	Con	https://www.publicwhip.org.uk/mp.php?mpid=42883
@@ -497,6 +505,7 @@ mpid	firstname	surname	party	PublicWhip URL
 43426	David	Pinto-Duschinsky	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43426
 43099	Lee	Pitcher	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43099
 42823	Jo	Platt	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42823
+43449	Sarah	Pochin	Reform UK	https://www.publicwhip.org.uk/mp.php?mpid=43449
 43167	Luke	Pollard	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43167
 43122	Joe	Powell	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43122
 43163	Lucy	Powell	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43163
@@ -538,6 +547,7 @@ mpid	firstname	surname	party	PublicWhip URL
 43311	Sarah	Russell	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43311
 43110	Tom	Rutland	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43110
 42939	Oliver	Ryan	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42939
+43445	Oliver	Ryan	Independent	https://www.publicwhip.org.uk/mp.php?mpid=43445
 43162	Anna	Sabine	LDem	https://www.publicwhip.org.uk/mp.php?mpid=43162
 43054	Sarah	Sackman	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43054
 43222	Jeevun	Sandher	Lab	https://www.publicwhip.org.uk/mp.php?mpid=43222
@@ -573,6 +583,7 @@ mpid	firstname	surname	party	PublicWhip URL
 43084	Ian	Sollom	LDem	https://www.publicwhip.org.uk/mp.php?mpid=43084
 43375	Ben	Spencer	Con	https://www.publicwhip.org.uk/mp.php?mpid=43375
 43328	Patrick	Spencer	Con	https://www.publicwhip.org.uk/mp.php?mpid=43328
+43450	Patrick	Spencer	Independent	https://www.publicwhip.org.uk/mp.php?mpid=43450
 43410	Gregory	Stafford	Con	https://www.publicwhip.org.uk/mp.php?mpid=43410
 42990	Euan	Stainbank	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42990
 42864	Keir	Starmer	Lab	https://www.publicwhip.org.uk/mp.php?mpid=42864
