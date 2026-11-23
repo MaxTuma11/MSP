@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "deploy": "gh-pages -d dist -r https://x-access-token:$GH_TOKEN@github.com/MaxTuma11/MSP.git",
-    "lint": "eslint . --ext .js, .jsx",
+    "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run"
   },
