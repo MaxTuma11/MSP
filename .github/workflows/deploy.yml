@@ -13,10 +13,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  deploy:
+  checks:
+    name: Code Quality and Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -32,27 +33,50 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Run linting
       - name: Run ESLint
         run: npm run lint
 
-      # Run all Vitest tests before building
       - name: Run tests
         run: npx vitest run
 
       - name: Build site
         run: npm run build
 
-      # Only prepare deployment on main or manual dispatch
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: checks
+
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      github.event_name != 'pull_request'
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
       - name: Set Git identity
-        if: github.event_name != 'pull_request'
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
 
-      # Deploy only if tests and build succeeded
       - name: Deploy to GitHub Pages
-        if: github.event_name != 'pull_request'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run deploy
