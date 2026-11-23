@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { buildRollingAverages } from "../../../src/components/charts/PollingChart.jsx";
+import { buildRollingAverages } from "../../../src/components/charts/pollingUtils";
 import { render } from "@testing-library/react";
 import PollingChart from "../../../src/components/charts/PollingChart.jsx";
 
